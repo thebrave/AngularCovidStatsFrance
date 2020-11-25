@@ -1,0 +1,125 @@
+<!-- <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next" (ngModelChange)='datechoisieFrom()' ></ngb-datepicker> -->
+<h1> Statistique de la Covid en France le {{this.DateDuJours}}</h1>
+<p>Les données sont mise à jours chaque jours à 20h00</p>
+<div class="row">
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Calendrier</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                                #d="ngbDatepicker" (ngModelChange)='datechoisieFrom()'>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </h5>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div  class="row">
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Cas Confirme</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.casConfirmes}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Cas Confirme EHPAD</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.casConfirmesEhpad}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Deces EHPAD</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.decesEhpad}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Deces</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.deces}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Gueris</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.gueris}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Hospitalises</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.hospitalises}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Reanimation</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.reanimation}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Nouvelles Reanimations</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.nouvellesReanimations}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+    <div class="card border-warning text-white bg-dark mb-3 col-sm-4">
+        <div class="card-header border-warning text-center">Nouvelles Hospitalisations</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.nouvellesHospitalisations}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card border-warning text-white bg-dark mb-1 col-sm-12">
+        <div class="card-header border-warning text-center">Source</div>
+        <div class="card-body border-warning">
+            <h5 class="card-title text-center">{{this.DonneeGlobalDuJoursChoisie.source.nom}}</h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted text-center">Mise jours le {{this.DonneeGlobalDuJoursChoisie.date}}</small>
+        </div>
+    </div>
+</div>
